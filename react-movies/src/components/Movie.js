@@ -10,12 +10,18 @@ const Movie = ({ title, poster_path, vote_average, id }) => (
     <Card.Img
       variant="top"
       src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+      onError={({ currentTarget }) => {
+        currentTarget.onerror = null; // prevents looping
+        currentTarget.src = require("../images/no-movie-poster.jpeg");
+      }}
     />
     <Card.Body>
       <Card.Title>
         <Container className="text-center">
           <Row>
-            <Col>{title}</Col>
+            <Col>
+              <small>{title}</small>
+            </Col>
           </Row>
           <Row>
             <Col>
