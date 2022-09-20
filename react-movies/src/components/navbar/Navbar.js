@@ -16,13 +16,18 @@ function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link>
-              <Link className="nav-link" to="/series">
-                Tv Shows
+              <Link className="nav-link" to="/movies">
+                Movies
               </Link>
             </Nav.Link>
             <Nav.Link>
-              <Link className="nav-link" to="/person">
-                Person
+              <Link className="nav-link" to="/series">
+                Series
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link className="nav-link" to="/people">
+                People
               </Link>
             </Nav.Link>
             <Nav.Link>

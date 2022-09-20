@@ -1,7 +1,7 @@
 import "./App.css";
 import NavBar from "./components/navbar/Navbar";
 import About from "./pages/About";
-import Person from "./pages/Person";
+import People from "./pages/People";
 import Series from "./pages/Series";
 import Home from "./pages/Home";
 import MovieInfo from "./pages/MovieInfo";
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="series/" element={<Series />} />
-        <Route path="person/" element={<Person />} />
+        <Route path="people/" element={<People />} />
         <Route path="about/" element={<About />} />
         <Route path="movies/" element={<MovieInfo />} />
         <Route path="movie/:id/" element={<MovieInfo />} />

@@ -1,13 +1,13 @@
 import Container from "react-bootstrap/Container";
 
-function Person() {
+function People() {
   return (
     <>
       <Container>
-        <h1>Person</h1>;
+        <h1>People</h1>;
       </Container>
     </>
   );
 }
 
-export default Person;
+export default People;
