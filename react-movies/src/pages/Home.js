@@ -1,9 +1,12 @@
-import Movie from "../components/Movie";
+import Movie from "../components/movie/Movie";
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const API_POPULAR_MOVIES =
@@ -20,6 +23,7 @@ function Home() {
   const [movies, setMovies] = useState([]);
   // sarch state
   const [searchVal, setSearchVal] = useState("");
+  const navigate = useNavigate();
 
   // fetch from api
   useEffect(() => {
@@ -42,6 +46,7 @@ function Home() {
   };
 
   const actionOnChange = (e) => {
+    navigate({ pathname: "/", search: `&query=${e.target.value}` });
     setSearchVal(e.target.value);
   };
 
@@ -49,13 +54,18 @@ function Home() {
     <>
       <Container>
         <form onSubmit={actionOnSubmit}>
-          <input
-            className="search"
-            type="search"
-            placeholder="Movie name..."
-            value={searchVal}
-            onChange={actionOnChange}
-          />
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="basic-addon1">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </InputGroup.Text>
+            <Form.Control
+              placeholder="search by movie name"
+              aria-label="movie name"
+              aria-describedby="basic-addon1"
+              value={searchVal}
+              onChange={actionOnChange}
+            />
+          </InputGroup>
         </form>
       </Container>
       <Container>
