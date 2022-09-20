@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const API_POPULAR_MOVIES =
@@ -62,7 +63,9 @@ function Home() {
           {movies.length > 0 &&
             movies.slice(0, 5).map((movie) => (
               <Col>
-                <Movie key={movie.id} {...movie} />
+                <Link className="nav-link" to={`/movie/${movie.id}/`}>
+                  <Movie key={movie.id} {...movie} />
+                </Link>
               </Col>
             ))}
         </Row>
