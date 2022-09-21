@@ -1,13 +1,13 @@
 import Container from "react-bootstrap/Container";
 
-function Series() {
+function SeriesInfo() {
   return (
     <>
       <Container>
-        <h1>Series</h1>
+        <h1>SeriesInfo</h1>
       </Container>
     </>
   );
 }
 
-export default Series;
+export default SeriesInfo;

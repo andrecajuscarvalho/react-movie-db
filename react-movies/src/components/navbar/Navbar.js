@@ -9,7 +9,9 @@ function NavBar() {
       <Container>
         <Nav.Link>
           <Link className="nav-link" to="/">
-            <Navbar.Brand>MovieDB</Navbar.Brand>
+            <Navbar.Brand>
+              <i class="fa-solid fa-bolt"></i>MSPdb
+            </Navbar.Brand>
           </Link>
         </Nav.Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
