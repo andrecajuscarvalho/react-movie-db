@@ -5,11 +5,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import Search from "../components/Search/Search";
-import {
-  API_POPULAR_MOVIES,
-  API_SEARCH_MOVIES,
-} from "../endpoins/paths/Movies";
-import CustomFetch from "../endpoins/methods/CustomFetch";
+import getPopularMovies from "../endpoins/movies/getPopularMovies";
+import getSearchedMovies from "../endpoins/movies/getSearchedMovies";
 
 function Movies() {
   const num_displayed_movies = 5;
@@ -17,15 +14,12 @@ function Movies() {
   const [searchVal, setSearchVal] = useState("");
 
   useEffect(() => {
-    CustomFetch({ endpoint_path: API_POPULAR_MOVIES, setter: setMovies });
+    getPopularMovies(setMovies);
   }, []);
 
   const actionOnSubmit = (e) => {
     e.preventDefault();
-    CustomFetch({
-      endpoint_path: API_SEARCH_MOVIES + searchVal,
-      setter: setMovies,
-    });
+    getSearchedMovies(setMovies, searchVal);
     setSearchVal("");
   };
 

@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Stars from "./Stars/Stars";
+import Stars from "../Stars/Stars";
 
 const Movie = ({ title, poster_path, vote_average, id }) => (
   <Card style={{ width: "15rem" }}>
@@ -12,7 +12,8 @@ const Movie = ({ title, poster_path, vote_average, id }) => (
       src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
       onError={({ currentTarget }) => {
         currentTarget.onerror = null; // prevents looping
-        currentTarget.src = require("./no-movie-poster.jpeg");
+        currentTarget.src = require(process.env.PUBLIC_URL +
+          "./no-movie-poster.jpeg");
       }}
     />
     <Card.Body>
