@@ -11,7 +11,8 @@ const API_SEARCH_MOVIES =
   API_KEY +
   "&language=en-US&include_adult=false&query=";
 
-function API_MOVIE_INFO(id) {
+const API_MOVIE_INFO = (props) => {
+  const id = props.id;
   return (
     SITE_BASE_PATH +
     "/3/movie/" +
@@ -20,6 +21,6 @@ function API_MOVIE_INFO(id) {
     API_KEY +
     "&language=en-US"
   );
-}
+};
 
 export { API_POPULAR_MOVIES, API_SEARCH_MOVIES, API_MOVIE_INFO };
