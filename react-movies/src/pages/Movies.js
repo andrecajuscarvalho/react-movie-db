@@ -9,30 +9,23 @@ import {
   API_POPULAR_MOVIES,
   API_SEARCH_MOVIES,
 } from "../endpoins/paths/Movies";
+import CustomFetch from "../endpoins/methods/CustomFetch";
 
 function Movies() {
-  // default there are no movies
+  const num_displayed_movies = 5;
   const [movies, setMovies] = useState([]);
-  // sarch state
   const [searchVal, setSearchVal] = useState("");
 
-  // fetch from api
   useEffect(() => {
-    fetch(API_POPULAR_MOVIES)
-      .then((res) => res.json())
-      .then((data) => {
-        setMovies(data.results);
-      });
+    CustomFetch({ endpoint_path: API_POPULAR_MOVIES, setter: setMovies });
   }, []);
 
   const actionOnSubmit = (e) => {
     e.preventDefault();
-    fetch(API_SEARCH_MOVIES + searchVal)
-      .then((res) => res.json())
-      .then((data) => {
-        setMovies(data.results);
-      });
-    // empty searchVal after search
+    CustomFetch({
+      endpoint_path: API_SEARCH_MOVIES + searchVal,
+      setter: setMovies,
+    });
     setSearchVal("");
   };
 
@@ -41,16 +34,16 @@ function Movies() {
       <Search
         pathnameVal="/"
         searchVal={searchVal}
-        placeholderVal="search for moviews"
+        placeholderVal="search for movies"
         actionOnSubmit={actionOnSubmit}
         setSearchVal={setSearchVal}
       />
       <Container>
         <Row>
           {movies.length > 0 &&
-            movies.slice(0, 5).map((movie) => (
+            movies.slice(0, num_displayed_movies).map((movie) => (
               <Col>
-                <Link className="nav-link" to={`/movie/${movie.id}/`}>
+                <Link className="nav-link" to={`/movies/${movie.id}/`}>
                   <Movie key={movie.id} {...movie} />
                 </Link>
               </Col>

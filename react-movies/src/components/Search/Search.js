@@ -22,7 +22,7 @@ function Search({
       <form onSubmit={actionOnSubmit}>
         <InputGroup className="mb-3">
           <InputGroup.Text id="basic-addon1">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
           </InputGroup.Text>
           <Form.Control
             placeholder={placeholderVal}

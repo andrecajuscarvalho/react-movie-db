@@ -11,4 +11,15 @@ const API_SEARCH_MOVIES =
   API_KEY +
   "&language=en-US&include_adult=false&query=";
 
-export { API_POPULAR_MOVIES, API_SEARCH_MOVIES };
+function API_MOVIE_INFO(id) {
+  return (
+    SITE_BASE_PATH +
+    "/3/movie/" +
+    id +
+    "?api_key=" +
+    API_KEY +
+    "&language=en-US"
+  );
+}
+
+export { API_POPULAR_MOVIES, API_SEARCH_MOVIES, API_MOVIE_INFO };
