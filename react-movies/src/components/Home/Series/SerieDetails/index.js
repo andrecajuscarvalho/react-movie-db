@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import SerieCredits from "./SerieCredits";
 
 const SerieDetails = (props) => (
   <>
@@ -41,6 +42,12 @@ const SerieDetails = (props) => (
                 </Row>
                 <br></br>
                 <Row>
+                  <Col>
+                    <b>Seasons:</b> {props.number_of_seasons}
+                  </Col>
+                </Row>
+                <br></br>
+                <Row>
                   <Col align="justify">
                     <b>Overview:</b> {props.overview}
                   </Col>
@@ -62,6 +69,11 @@ const SerieDetails = (props) => (
         </Card.Title>
       </Card.Body>
     </Card>
+    <SerieCredits
+      id={props.id}
+      movie_id={props.id}
+      seasons={props.number_of_seasons}
+    />
   </>
 );
 
