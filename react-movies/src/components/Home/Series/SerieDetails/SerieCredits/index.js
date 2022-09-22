@@ -13,10 +13,9 @@ const SerieCredits = ({ movie_id, seasons }) => {
   const [actors, setActors] = useState([]);
 
   function handleClick(e) {
-    console.log("You clicked submit.");
+    e.preventDefault();
     setSeason(e.target.value);
     getSeasonActors(setActors, { movie_id }, e.target.value);
-    console.log(e.target.value);
   }
 
   return (
@@ -34,7 +33,7 @@ const SerieCredits = ({ movie_id, seasons }) => {
               <Col>
                 <Row>
                   {[...Array(seasons)].map((x, i) => (
-                    <Col>
+                    <Col key={i}>
                       <Button
                         onClick={handleClick}
                         value={i + 1}
@@ -53,21 +52,19 @@ const SerieCredits = ({ movie_id, seasons }) => {
           <Container>
             Current Season: {season}
             Number of actors: {actors.length}
-            {actors.length > 0 &&
-              actors.map((actor) => (
-                <Row>
-                  <Col sm={4}>
+            <Row>
+              {actors.length > 0 &&
+                actors.map((actor) => (
+                  <Col sm={3} key={actor.id}>
                     <Link className="nav-link" to={`/people/${actor.id}/`}>
-                      {actor.original_name}{" "}
                       <Person
-                        key={actor.id}
                         name={actor.original_name}
                         profile_path={actor.profile_path}
                       />{" "}
                     </Link>
                   </Col>
-                </Row>
-              ))}
+                ))}
+            </Row>
           </Container>
         </Card.Body>
       </Card>

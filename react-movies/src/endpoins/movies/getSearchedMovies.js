@@ -1,7 +1,7 @@
 import { API_KEY, API_BASE_PATH } from "../base";
 
-export default function getPopularMovies(setter, searchVal) {
-  fetch(
+export default async function getPopularMovies(setter, searchVal) {
+  await fetch(
     API_BASE_PATH +
       "/3/search/movie?api_key=" +
       API_KEY +

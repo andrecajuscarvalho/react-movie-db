@@ -5,76 +5,75 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import SerieCredits from "./SerieCredits";
 
-const SerieDetails = (props) => (
-  <>
-    <h1>
-      <b>{props.name}</b>
-    </h1>
-    <Card>
-      <Card.Body>
-        <Card.Title>
-          <Container>
-            <Row>
-              <Col sm={8}>
-                <br></br>
-                <Row>
-                  <Col>
-                    <b>Title:</b> {props.name}
-                  </Col>
-                </Row>
-                <br></br>
-                <Row>
-                  <Col>
-                    <b>Rating:</b> {props.vote_average}
-                  </Col>
-                  <Col>
-                    <b>Vote Count:</b> {props.vote_count}
-                  </Col>
-                </Row>
-                <br></br>
-                <Row>
-                  <Col>
-                    <b>Release Date:</b> {props.first_air_date}
-                  </Col>
-                  <Col>
-                    <b>Status:</b> {props.status}
-                  </Col>
-                </Row>
-                <br></br>
-                <Row>
-                  <Col>
-                    <b>Seasons:</b> {props.number_of_seasons}
-                  </Col>
-                </Row>
-                <br></br>
-                <Row>
-                  <Col align="justify">
-                    <b>Overview:</b> {props.overview}
-                  </Col>
-                </Row>
-                {props.season_number}
-              </Col>
-              <Col sm={4}>
-                <Card.Img
-                  variant="top"
-                  src={`https://image.tmdb.org/t/p/w500/${props.poster_path}`}
-                  onError={({ currentTarget }) => {
-                    currentTarget.onerror = null; // prevents looping
-                    currentTarget.src = require("./no-movie-poster.jpeg");
-                  }}
-                />
-              </Col>
-            </Row>
-          </Container>
-        </Card.Title>
-      </Card.Body>
-    </Card>
-    <SerieCredits
-      id={props.id}
-      movie_id={props.id}
-      seasons={props.number_of_seasons}
-    />
-  </>
-);
+const SerieDetails = (props) => {
+  const { serie } = props;
+  return (
+    <>
+      <h1>
+        <b>{serie.name}</b>
+      </h1>
+      <Card>
+        <Card.Body>
+          <Card.Title>
+            <Container>
+              <Row>
+                <Col sm={8}>
+                  <br></br>
+                  <Row>
+                    <Col>
+                      <b>Title:</b> {serie.name}
+                    </Col>
+                  </Row>
+                  <br></br>
+                  <Row>
+                    <Col>
+                      <b>Rating:</b> {serie.vote_average}
+                    </Col>
+                    <Col>
+                      <b>Vote Count:</b> {serie.vote_count}
+                    </Col>
+                  </Row>
+                  <br></br>
+                  <Row>
+                    <Col>
+                      <b>Release Date:</b> {serie.first_air_date}
+                    </Col>
+                    <Col>
+                      <b>Status:</b> {serie.status}
+                    </Col>
+                  </Row>
+                  <br></br>
+                  <Row>
+                    <Col>
+                      <b>Seasons:</b> {serie.number_of_seasons}
+                    </Col>
+                  </Row>
+                  <br></br>
+                  <Row>
+                    <Col align="justify">
+                      <b>Overview:</b> {serie.overview}
+                    </Col>
+                  </Row>
+                  {serie.season_number}
+                </Col>
+                <Col sm={4}>
+                  <Card.Img
+                    variant="top"
+                    src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null; // prevents looping
+                      currentTarget.src = require("./no-movie-poster.jpeg");
+                    }}
+                  />
+                </Col>
+              </Row>
+            </Container>
+          </Card.Title>
+        </Card.Body>
+      </Card>
+      <SerieCredits movie_id={serie.id} seasons={serie.number_of_seasons} />
+    </>
+  );
+};
 
 export default SerieDetails;

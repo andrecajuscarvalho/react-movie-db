@@ -15,7 +15,7 @@ export default function SeriesInfo() {
   return (
     <>
       <Container>
-        <SerieDetails {...serie} />
+        <SerieDetails serie={serie} />
       </Container>
     </>
   );

@@ -1,7 +1,7 @@
 import { API_KEY, API_BASE_PATH } from "../base";
 
-export default function getPersonInfo(id, setter) {
-  fetch(
+export default async function getPersonInfo(id, setter) {
+  await fetch(
     API_BASE_PATH +
       "/3/person/" +
       id +
