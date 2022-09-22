@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import SerieDetails from "../components/Home/Series/SerieDetails/SerieDetails";
+import SerieDetails from "../components/Home/Series/SerieDetails";
 import getSerieInfo from "../endpoins/series/getSerieInfo";
 
 export default function SeriesInfo() {

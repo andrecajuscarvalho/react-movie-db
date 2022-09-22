@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import PersonDetails from "../components/Home/People/PersonDetails/PersonDetails";
+import PersonDetails from "../components/Home/People/PersonDetails";
 import getPersonInfo from "../endpoins/people/getPersonInfo";
 
 export default function PeopleInfo() {
