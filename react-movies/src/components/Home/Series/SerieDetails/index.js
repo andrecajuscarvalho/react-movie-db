@@ -71,7 +71,7 @@ const SerieDetails = (props) => {
           </Card.Title>
         </Card.Body>
       </Card>
-      <SerieCredits movie_id={serie.id} seasons={serie.number_of_seasons} />
+      <SerieCredits serieId={serie.id} seasons={serie.number_of_seasons} />
     </>
   );
 };

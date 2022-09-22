@@ -1,6 +1,6 @@
-import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Container from "react-bootstrap/Container";
 
 function Search({ searchVal, actionOnSubmit, setSearchVal }) {
   const actionOnChange = (e) => {

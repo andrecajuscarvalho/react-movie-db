@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import NoMovie from "../../Movies/NoMovie.png";
 
 const MovieDetails = (props) => (
   <>
@@ -61,11 +62,11 @@ const MovieDetails = (props) => (
               <Col sm={4}>
                 <Card.Img
                   variant="top"
-                  src={`https://image.tmdb.org/t/p/w500/${props.poster_path}`}
-                  onError={({ currentTarget }) => {
-                    currentTarget.onerror = null; // prevents looping
-                    currentTarget.src = require("./no-movie-poster.jpeg");
-                  }}
+                  src={
+                    props.poster_path
+                      ? `https://image.tmdb.org/t/p/w500/${props.poster_path}`
+                      : NoMovie
+                  }
                 />
               </Col>
             </Row>

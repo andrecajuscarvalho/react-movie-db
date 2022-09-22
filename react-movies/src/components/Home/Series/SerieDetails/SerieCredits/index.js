@@ -3,19 +3,19 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import getSeasonActors from "../../../../../endpoins/series/getSeasonActors";
 import Person from "../../../People/Person";
 import { Link } from "react-router-dom";
 
-const SerieCredits = ({ movie_id, seasons }) => {
+const SerieCredits = ({ serieId, seasons }) => {
   const [season, setSeason] = useState(1);
   const [actors, setActors] = useState([]);
 
   function handleClick(e) {
     e.preventDefault();
     setSeason(e.target.value);
-    getSeasonActors(setActors, { movie_id }, e.target.value);
+    getSeasonActors(setActors, { serieId }, e.target.value);
   }
 
   return (

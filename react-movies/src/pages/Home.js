@@ -10,7 +10,7 @@ import getSearchedPeople from "../endpoins/people/getSearchedPeople";
 import Movies from "../components/Home/Movies";
 import Series from "../components/Home/Series";
 import People from "../components/Home/People";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 function Home() {
   const num_displayed_results = 5;
