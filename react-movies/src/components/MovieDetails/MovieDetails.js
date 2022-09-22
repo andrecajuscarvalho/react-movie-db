@@ -15,62 +15,46 @@ const MovieDetails = (props) => (
           <Container>
             <Row>
               <Col sm={8}>
+                <br></br>
                 <Row>
                   <Col>
-                    Title: <b>{props.title}</b>
+                    <b>Title:</b> {props.title}
                   </Col>
                 </Row>
+                <br></br>
                 <Row>
                   <Col>
-                    Rating: <b>{props.vote_average}</b>
+                    <b>Rating:</b> {props.vote_average}
                   </Col>
                   <Col>
-                    Vote Count: <b>{props.vote_count}</b>
+                    <b>Vote Count:</b> {props.vote_count}
                   </Col>
                 </Row>
+                <br></br>
                 <Row>
                   <Col>
-                    Release Date: <b>{props.release_date}</b>
+                    <b>Release Date:</b> {props.release_date}
                   </Col>
                   <Col>
-                    Status: <b>{props.status}</b>
+                    <b>Status:</b> {props.status}
                   </Col>
                 </Row>
-
-                <Row>Runtime: {props.runtime}</Row>
-                <Row>Revenue: {props.revenue}$</Row>
-
+                <br></br>
                 <Row>
                   <Col>
-                    adult: <b>{props.adult}</b>
-                  </Col>
-                  <Col>
-                    backdrop_path: <b>{props.backdrop_path}</b>
+                    <b>Runtime:</b> {props.runtime}
                   </Col>
                 </Row>
+                <br></br>
                 <Row>
                   <Col>
-                    belongs_to_collection Date:{" "}
-                    <b>{props.belongs_to_collection}</b>
-                  </Col>
-                  <Col>
-                    Status: <b>{props.budget}</b>
+                    <b>Revenue:</b> {props.revenue}$
                   </Col>
                 </Row>
+                <br></br>
                 <Row>
-                  <Col>
-                    Release Date: <b>{props.budget}</b>
-                  </Col>
-                  <Col>
-                    Status: <b>{props.status}</b>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    Release Date: <b>{props.release_date}</b>
-                  </Col>
-                  <Col>
-                    Status: <b>{props.status}</b>
+                  <Col align="justify">
+                    <b>Overview:</b> {props.overview}
                   </Col>
                 </Row>
               </Col>

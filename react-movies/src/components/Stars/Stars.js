@@ -1,9 +1,9 @@
 import "./Stars.css";
 
 const Stars = ({ vote_average }) => {
-  const solid_star = <i className="fa-solid fa-star fa-2xs icon-cog"></i>;
+  const solid_star = <i className="fa-solid fa-star fa-xs icon-cog"></i>;
   const half_solid_star = (
-    <i className="fa-solid fa-star-half-stroke fa-2xs icon-cog"></i>
+    <i className="fa-solid fa-star-half-stroke fa-xs icon-cog"></i>
   );
   let final = [];
 
@@ -18,11 +18,7 @@ const Stars = ({ vote_average }) => {
     }
   }
 
-  return (
-    <>
-      {final}(<small>{vote_average}</small>)
-    </>
-  );
+  return <>{final}</>;
 };
 
 export default Stars;
