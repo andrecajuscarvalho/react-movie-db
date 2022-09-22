@@ -9,7 +9,7 @@ import PersonCredits from "./PersonCredits";
 const PersonDetails = (props) => (
   <>
     <h1>
-      <b>{props.title}</b>
+      <b>{props.name}</b>
     </h1>
     <Card>
       <Card.Body>
@@ -25,37 +25,31 @@ const PersonDetails = (props) => (
               <br></br>
               <Row>
                 <Col>
-                  <b>Rating:</b> {props.vote_average}
-                </Col>
-                <Col>
-                  <b>Vote Count:</b> {props.vote_count}
+                  <b>Field:</b> {props.known_for_department}
                 </Col>
               </Row>
               <br></br>
               <Row>
                 <Col>
-                  <b>Release Date:</b> {props.release_date}
-                </Col>
-                <Col>
-                  <b>Status:</b> {props.status}
+                  <b>gender:</b> {props.gender == 2 ? "Male" : "Female"}
                 </Col>
               </Row>
               <br></br>
               <Row>
                 <Col>
-                  <b>Runtime:</b> {props.runtime}
+                  <b>Born:</b> {props.place_of_birth}
                 </Col>
               </Row>
               <br></br>
               <Row>
                 <Col>
-                  <b>Revenue:</b> {props.revenue}$
+                  <b>Also Known As:</b> {props.also_known_as}
                 </Col>
               </Row>
               <br></br>
               <Row>
                 <Col align="justify">
-                  <b>Overview:</b> {props.overview}
+                  <b>Overview:</b> {props.biography}
                 </Col>
               </Row>
             </Col>
