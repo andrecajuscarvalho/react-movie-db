@@ -10,7 +10,7 @@ const Series = ({ num_displayed_results, series }) => {
     <>
       <Container>
         <Row>
-          <h1>Movies</h1>
+          <h1>Series</h1>
         </Row>
         <br></br>
         <Row>

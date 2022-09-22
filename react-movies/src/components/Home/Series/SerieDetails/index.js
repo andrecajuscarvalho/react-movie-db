@@ -4,10 +4,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const PersonDetails = (props) => (
+const SerieDetails = (props) => (
   <>
     <h1>
-      <b>{props.title}</b>
+      <b>{props.name}</b>
     </h1>
     <Card>
       <Card.Body>
@@ -18,7 +18,7 @@ const PersonDetails = (props) => (
                 <br></br>
                 <Row>
                   <Col>
-                    <b>birthday:</b> {props.birthday}
+                    <b>Title:</b> {props.name}
                   </Col>
                 </Row>
                 <br></br>
@@ -33,22 +33,10 @@ const PersonDetails = (props) => (
                 <br></br>
                 <Row>
                   <Col>
-                    <b>Release Date:</b> {props.release_date}
+                    <b>Release Date:</b> {props.first_air_date}
                   </Col>
                   <Col>
                     <b>Status:</b> {props.status}
-                  </Col>
-                </Row>
-                <br></br>
-                <Row>
-                  <Col>
-                    <b>Runtime:</b> {props.runtime}
-                  </Col>
-                </Row>
-                <br></br>
-                <Row>
-                  <Col>
-                    <b>Revenue:</b> {props.revenue}$
                   </Col>
                 </Row>
                 <br></br>
@@ -57,6 +45,7 @@ const PersonDetails = (props) => (
                     <b>Overview:</b> {props.overview}
                   </Col>
                 </Row>
+                {props.season_number}
               </Col>
               <Col sm={4}>
                 <Card.Img
@@ -76,4 +65,4 @@ const PersonDetails = (props) => (
   </>
 );
 
-export default PersonDetails;
+export default SerieDetails;
