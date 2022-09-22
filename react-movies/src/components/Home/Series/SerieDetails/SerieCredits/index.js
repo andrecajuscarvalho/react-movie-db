@@ -6,13 +6,13 @@ import Button from "react-bootstrap/Button";
 import React, { useState, useEffect } from "react";
 import getSeasonActors from "../../../../../endpoins/series/getSeasonActors";
 import Person from "../../../People/Person";
+import { Link } from "react-router-dom";
 
 const SerieCredits = ({ movie_id, seasons }) => {
   const [season, setSeason] = useState(1);
   const [actors, setActors] = useState([]);
 
   function handleClick(e) {
-    e.preventDefault();
     console.log("You clicked submit.");
     setSeason(e.target.value);
     getSeasonActors(setActors, { movie_id }, e.target.value);
@@ -51,13 +51,22 @@ const SerieCredits = ({ movie_id, seasons }) => {
         </Card.Header>
         <Card.Body>
           <Container>
-            {season}
-            {actors.length}
+            Current Season: {season}
+            Number of actors: {actors.length}
             {actors.length > 0 &&
               actors.map((actor) => (
-                <Col>
-                  {actor.original_name} <Person key={actors.id} {...actors} />{" "}
-                </Col>
+                <Row>
+                  <Col sm={4}>
+                    <Link className="nav-link" to={`/people/${actor.id}/`}>
+                      {actor.original_name}{" "}
+                      <Person
+                        key={actor.id}
+                        name={actor.original_name}
+                        profile_path={actor.profile_path}
+                      />{" "}
+                    </Link>
+                  </Col>
+                </Row>
               ))}
           </Container>
         </Card.Body>
