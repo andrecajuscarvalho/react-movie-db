@@ -1,10 +1,10 @@
 import { API_KEY, API_BASE_PATH } from "../base";
 
-export default async function getMovieCredits(setter, { movie_id }) {
+export default async function getMovieCredits(setter, id) {
   await fetch(
     API_BASE_PATH +
-      "/3/tv/" +
-      movie_id +
+      "/3/movie/" +
+      id +
       "/credits?api_key=" +
       API_KEY +
       "&language=en-US"

@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import NoMovie from "../../Movies/NoMovie.png";
+import MovieCredits from "./MovieCredits";
 
 const MovieDetails = (props) => (
   <>
@@ -74,6 +75,7 @@ const MovieDetails = (props) => (
         </Card.Title>
       </Card.Body>
     </Card>
+    <MovieCredits movieId={props.id} />
   </>
 );
 

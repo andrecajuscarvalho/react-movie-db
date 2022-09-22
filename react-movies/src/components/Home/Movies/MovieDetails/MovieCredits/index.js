@@ -2,18 +2,19 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import getMovieCredits from "../../../../../endpoins/movies/getMovieCredits";
 import Person from "../../../People/Person";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-const MovieCredits = ({ movie_id, seasons }) => {
+const MovieCredits = () => {
+  const { id } = useParams();
   const [actors, setActors] = useState([]);
 
   useEffect(() => {
-    e.preventDefault();
-    getMovieCredits(setActors, { movie_id });
-  }, []);
+    getMovieCredits(setActors, id);
+  }, [id]);
 
   return (
     <>
@@ -23,7 +24,9 @@ const MovieCredits = ({ movie_id, seasons }) => {
       <Card>
         <Card.Body>
           <Container>
-            Number of actors: {actors.length}
+            <Row>
+              <Col>Number of actors: {actors.length}</Col>
+            </Row>
             <Row>
               {actors.length > 0 &&
                 actors.map((actor) => (
