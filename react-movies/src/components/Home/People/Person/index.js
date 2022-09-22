@@ -3,17 +3,17 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import NoPerson from "../../People/NoPerson.png";
 
 const Person = ({ name, profile_path }) => (
   <Card style={{ width: "15rem" }}>
     <Card.Img
       variant="top"
-      src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
-      onError={({ currentTarget }) => {
-        currentTarget.onerror = null; // prevents looping
-        currentTarget.src = require(process.env.PUBLIC_URL +
-          "./no-movie-poster.jpeg");
-      }}
+      src={
+        profile_path
+          ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+          : NoPerson
+      }
     />
     <Card.Body>
       <Card.Title>

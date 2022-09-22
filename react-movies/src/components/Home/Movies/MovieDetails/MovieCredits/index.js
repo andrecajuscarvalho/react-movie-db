@@ -25,8 +25,11 @@ const MovieCredits = () => {
         <Card.Body>
           <Container>
             <Row>
-              <Col>Number of actors: {actors.length}</Col>
+              <Col>
+                <b>Number of actors:</b> {actors.length}
+              </Col>
             </Row>
+            <br></br>
             <Row>
               {actors.length > 0 &&
                 actors.map((actor) => (

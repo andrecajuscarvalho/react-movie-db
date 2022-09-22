@@ -4,17 +4,15 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Stars from "../../Generic/Stars";
+import NoSerie from "../../Series/NoSerie.png";
 
 const Serie = ({ name, poster_path, vote_average, id }) => (
   <Card style={{ width: "15rem" }}>
     <Card.Img
       variant="top"
-      src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-      onError={({ currentTarget }) => {
-        currentTarget.onerror = null; // prevents looping
-        currentTarget.src = require(process.env.PUBLIC_URL +
-          "./no-movie-poster.jpeg");
-      }}
+      src={
+        poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : NoSerie
+      }
     />
     <Card.Body>
       <Card.Title>

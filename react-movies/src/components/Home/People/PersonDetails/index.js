@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import NoPerson from "../../People/NoPerson.png";
 
 const PersonDetails = (props) => (
   <>
@@ -61,11 +62,11 @@ const PersonDetails = (props) => (
               <Col sm={4}>
                 <Card.Img
                   variant="top"
-                  src={`https://image.tmdb.org/t/p/w500/${props.poster_path}`}
-                  onError={({ currentTarget }) => {
-                    currentTarget.onerror = null; // prevents looping
-                    currentTarget.src = require("./no-movie-poster.jpeg");
-                  }}
+                  src={
+                    props.profile_path
+                      ? `https://image.tmdb.org/t/p/w500/${props.profile_path}`
+                      : NoPerson
+                  }
                 />
               </Col>
             </Row>

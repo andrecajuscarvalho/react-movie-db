@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import SerieCredits from "./SerieCredits";
+import NoSerie from "../../Series/NoSerie.png";
 
 const SerieDetails = (props) => {
   const { serie } = props;
@@ -59,11 +60,11 @@ const SerieDetails = (props) => {
                 <Col sm={4}>
                   <Card.Img
                     variant="top"
-                    src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
-                    onError={({ currentTarget }) => {
-                      currentTarget.onerror = null; // prevents looping
-                      currentTarget.src = require("./no-movie-poster.jpeg");
-                    }}
+                    src={
+                      serie.poster_path
+                        ? `https://image.tmdb.org/t/p/w500/${serie.poster_path}`
+                        : NoSerie
+                    }
                   />
                 </Col>
               </Row>
