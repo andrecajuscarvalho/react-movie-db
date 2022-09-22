@@ -1,14 +1,10 @@
 import { API_KEY, API_BASE_PATH } from "../base";
 
-export default async function getSeasonActors(
-  setter,
-  { serieId },
-  seasonNumber
-) {
+export default async function getSeasonActors(setter, id, seasonNumber) {
   await fetch(
     API_BASE_PATH +
       "/3/tv/" +
-      serieId +
+      id +
       "/season/" +
       seasonNumber +
       "/aggregate_credits?api_key=" +

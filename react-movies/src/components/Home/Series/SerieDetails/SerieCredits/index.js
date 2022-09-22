@@ -3,19 +3,25 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import getSeasonActors from "../../../../../endpoins/series/getSeasonActors";
 import Person from "../../../People/Person";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-const SerieCredits = ({ serieId, seasons }) => {
+const SerieCredits = ({ seasons }) => {
+  const { id } = useParams();
   const [season, setSeason] = useState(1);
   const [actors, setActors] = useState([]);
+
+  useEffect(() => {
+    getSeasonActors(setActors, id, 1);
+  }, [id]);
 
   function handleClick(e) {
     e.preventDefault();
     setSeason(e.target.value);
-    getSeasonActors(setActors, { serieId }, e.target.value);
+    getSeasonActors(setActors, id, e.target.value);
   }
 
   return (
@@ -50,8 +56,12 @@ const SerieCredits = ({ serieId, seasons }) => {
         </Card.Header>
         <Card.Body>
           <Container>
-            Current Season: {season}
-            Number of actors: {actors.length}
+            <Row>
+              <Col>Current Season: {season}</Col>
+            </Row>
+            <Row>
+              <Col>Number of actors: {actors.length}</Col>
+            </Row>
             <Row>
               {actors.length > 0 &&
                 actors.map((actor) => (
