@@ -16,15 +16,6 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link className="nav-link" to="/movies">
-              Movies
-            </Link>
-            <Link className="nav-link" to="/series">
-              Series
-            </Link>
-            <Link className="nav-link" to="/people">
-              People
-            </Link>
             <Link className="nav-link" to="/about">
               About
             </Link>

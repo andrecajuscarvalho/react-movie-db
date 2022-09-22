@@ -1,9 +1,9 @@
 import { API_KEY, SITE_BASE_PATH } from "../base";
 
-export default function getPopularMovies(id, setter) {
+export default function getPersonInfo(id, setter) {
   fetch(
     SITE_BASE_PATH +
-      "/3/movie/" +
+      "/3/person/" +
       id +
       "?api_key=" +
       API_KEY +
