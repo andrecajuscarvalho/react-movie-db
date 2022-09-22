@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Stars from "../../Generic/Stars";
 import NoSerie from "../../Series/NoSerie.png";
 
-const Serie = ({ name, poster_path, vote_average, id }) => (
+const Serie = ({ name, poster_path, vote_average }) => (
   <Card style={{ width: "15rem" }}>
     <Card.Img
       variant="top"

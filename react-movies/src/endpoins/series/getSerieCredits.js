@@ -1,6 +1,6 @@
 import { API_KEY, API_BASE_PATH } from "../base";
 
-export default async function getSeasonActors(setter, id, seasonNumber) {
+export default async function getSerieCredits(setter, id, seasonNumber) {
   await fetch(
     API_BASE_PATH +
       "/3/tv/" +

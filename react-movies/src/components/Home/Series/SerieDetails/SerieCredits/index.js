@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import React, { useState, useEffect } from "react";
-import getSeasonActors from "../../../../../endpoins/series/getSeasonActors";
+import getSerieCredits from "../../../../../endpoins/series/getSerieCredits";
 import Person from "../../../People/Person";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -15,13 +15,13 @@ const SerieCredits = ({ seasons }) => {
   const [actors, setActors] = useState([]);
 
   useEffect(() => {
-    getSeasonActors(setActors, id, 1);
+    getSerieCredits(setActors, id, 1);
   }, [id]);
 
   function handleClick(e) {
     e.preventDefault();
     setSeason(e.target.value);
-    getSeasonActors(setActors, id, e.target.value);
+    getSerieCredits(setActors, id, e.target.value);
   }
 
   return (
