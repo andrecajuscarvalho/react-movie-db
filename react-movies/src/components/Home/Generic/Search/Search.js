@@ -3,17 +3,11 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { useNavigate } from "react-router-dom";
 
-function Search({
-  pathnameVal,
-  searchVal,
-  placeholderVal,
-  actionOnSubmit,
-  setSearchVal,
-}) {
+function Search({ searchVal, actionOnSubmit, setSearchVal }) {
   const navigate = useNavigate();
 
   const actionOnChange = (e) => {
-    navigate({ pathname: pathnameVal, search: `query=${e.target.value}` });
+    navigate({ pathname: "/", search: `query=${e.target.value}` });
     setSearchVal(e.target.value);
   };
 
@@ -25,7 +19,7 @@ function Search({
             <i className="fa-solid fa-magnifying-glass"></i>
           </InputGroup.Text>
           <Form.Control
-            placeholder={placeholderVal}
+            placeholder="Search for movies, series and people..."
             aria-describedby="basic-addon1"
             value={searchVal}
             onChange={actionOnChange}

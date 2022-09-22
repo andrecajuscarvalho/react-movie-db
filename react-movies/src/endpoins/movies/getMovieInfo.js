@@ -1,6 +1,6 @@
 import { API_KEY, SITE_BASE_PATH } from "../base";
 
-export default function getPopularMovies(id, setter) {
+export default function getMovieInfo(id, setter) {
   fetch(
     SITE_BASE_PATH +
       "/3/movie/" +

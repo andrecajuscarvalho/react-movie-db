@@ -1,6 +1,6 @@
 import { API_KEY, SITE_BASE_PATH } from "../base";
 
-export default function getPopularSeries(setter, searchVal) {
+export default function getSearchedSeries(setter, searchVal) {
   fetch(
     SITE_BASE_PATH +
       "/3/search/tv?api_key=" +

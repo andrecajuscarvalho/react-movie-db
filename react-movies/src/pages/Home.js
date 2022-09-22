@@ -1,13 +1,13 @@
-import Welcome from "../components/Welcome/Welcome";
-import Movie from "../components/Movie/Movie";
-import Serie from "../components/Serie/Serie";
-import Person from "../components/Person/Person";
+import Welcome from "../components/Home/Welcome/Welcome";
+import Movie from "../components/Home/Movies/Movie/Movie";
+import Serie from "../components/Home/Series/Serie/Serie";
+import Person from "../components/Home/People/Person/Person";
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
-import Search from "../components/Search/Search";
+import Search from "../components/Home/Generic/Search/Search";
 import getPopularMovies from "../endpoins/movies/getPopularMovies";
 import getPopularSeries from "../endpoins/series/getPopularSeries";
 import getPopularPeople from "../endpoins/people/getPopularPeople";
@@ -40,9 +40,7 @@ function Home() {
     <>
       <Welcome />
       <Search
-        pathnameVal="/"
         searchVal={searchVal}
-        placeholderVal="search for movies"
         actionOnSubmit={actionOnSubmit}
         setSearchVal={setSearchVal}
       />

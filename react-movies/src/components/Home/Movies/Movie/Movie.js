@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Stars from "../Stars/Stars";
+import Stars from "../../Generic/Stars/Stars";
 
 const Movie = ({ title, poster_path, vote_average, id }) => (
   <Card style={{ width: "15rem" }}>

@@ -1,6 +1,6 @@
 import { API_KEY, SITE_BASE_PATH } from "../base";
 
-export default function getPopularPeople(setter, searchVal) {
+export default function getSearchPeople(setter, searchVal) {
   fetch(
     SITE_BASE_PATH +
       "/3/search/person?api_key=" +
