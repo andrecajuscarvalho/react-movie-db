@@ -10,6 +10,7 @@ import getSearchedPeople from "../endpoins/people/getSearchedPeople";
 import Movies from "../components/Home/Movies";
 import Series from "../components/Home/Series";
 import People from "../components/Home/People";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 function Home() {
   const num_displayed_results = 5;
@@ -17,18 +18,27 @@ function Home() {
   const [series, setSeries] = useState([]);
   const [people, setPeople] = useState([]);
   const [searchVal, setSearchVal] = useState("");
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
+    const query = searchParams.get("query");
     getPopularMovies(setMovies);
     getPopularSeries(setSeries);
     getPopularPeople(setPeople);
-  }, []);
+    if (query && query.length > 0) {
+      getSearchedMovies(setMovies, query);
+      getSearchedSeries(setSeries, query);
+      getSearchedPeople(setPeople, query);
+    }
+  }, [searchParams]);
 
   const actionOnSubmit = (e) => {
     e.preventDefault();
     getSearchedMovies(setMovies, searchVal);
     getSearchedSeries(setSeries, searchVal);
     getSearchedPeople(setPeople, searchVal);
+    navigate({ pathname: "/", search: `query=${searchVal}` });
     setSearchVal("");
   };
 

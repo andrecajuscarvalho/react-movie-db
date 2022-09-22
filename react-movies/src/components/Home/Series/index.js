@@ -16,9 +16,9 @@ const Series = ({ num_displayed_results, series }) => {
         <Row>
           {series.length > 0 &&
             series.slice(0, num_displayed_results).map((serie) => (
-              <Col>
+              <Col key={serie.id}>
                 <Link className="nav-link" to={`/series/${serie.id}/`}>
-                  <Serie key={serie.id} {...serie} />
+                  <Serie {...serie} />
                 </Link>
               </Col>
             ))}

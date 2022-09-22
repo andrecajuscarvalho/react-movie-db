@@ -26,7 +26,7 @@ const Movie = ({ title, poster_path, vote_average, id }) => (
           </Row>
           <Row>
             <Col>
-              <Stars key={id} vote_average={vote_average} />
+              <Stars vote_average={vote_average} />
             </Col>
           </Row>
         </Container>

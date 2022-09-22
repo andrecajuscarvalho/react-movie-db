@@ -16,9 +16,9 @@ const People = ({ num_displayed_results, people }) => {
         <Row>
           {people.length > 0 &&
             people.slice(0, num_displayed_results).map((person) => (
-              <Col>
+              <Col key={person.id}>
                 <Link className="nav-link" to={`/people/${person.id}/`}>
-                  <Person key={person.id} {...person} />
+                  <Person {...person} />
                 </Link>
               </Col>
             ))}
