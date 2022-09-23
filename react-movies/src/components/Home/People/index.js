@@ -4,8 +4,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
+import Alert from "react-bootstrap/Alert";
 
-const People = ({ num_displayed_results, people }) => {
+const People = ({ num_displayed_results, people, query }) => {
   return (
     <>
       <Container>
@@ -22,6 +23,11 @@ const People = ({ num_displayed_results, people }) => {
                 </Link>
               </Col>
             ))}
+          {people.length === 0 ? (
+            <Alert variant="dark">
+              There are no <b>people</b> with the name <b>{query}</b>!
+            </Alert>
+          ) : null}
         </Row>
         <br></br>
       </Container>

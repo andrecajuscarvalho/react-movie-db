@@ -50,9 +50,21 @@ function Home() {
         actionOnSubmit={actionOnSubmit}
         setSearchVal={setSearchVal}
       />
-      <Movies num_displayed_results={num_displayed_results} movies={movies} />
-      <Series num_displayed_results={num_displayed_results} series={series} />
-      <People num_displayed_results={num_displayed_results} people={people} />
+      <Movies
+        num_displayed_results={num_displayed_results}
+        movies={movies}
+        query={searchParams.get("query")}
+      />
+      <Series
+        num_displayed_results={num_displayed_results}
+        series={series}
+        query={searchParams.get("query")}
+      />
+      <People
+        num_displayed_results={num_displayed_results}
+        people={people}
+        query={searchParams.get("query")}
+      />
     </>
   );
 }

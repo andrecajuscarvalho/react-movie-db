@@ -4,8 +4,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
+import Alert from "react-bootstrap/Alert";
 
-const Movies = ({ num_displayed_results, movies }) => {
+const Movies = ({ num_displayed_results, movies, query }) => {
   return (
     <>
       <Container>
@@ -22,6 +23,11 @@ const Movies = ({ num_displayed_results, movies }) => {
                 </Link>
               </Col>
             ))}
+          {movies.length === 0 ? (
+            <Alert variant="dark">
+              There are no <b>movies</b> with the title <b>{query}</b>!
+            </Alert>
+          ) : null}
         </Row>
         <br></br>
       </Container>

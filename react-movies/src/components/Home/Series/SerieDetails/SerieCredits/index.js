@@ -30,13 +30,13 @@ const SerieCredits = ({ seasons }) => {
         <b>Cast by season</b>
       </h1>
       <Card>
-        <Card.Header>
+        <Card.Body>
           <Container>
             <Row>
-              <Col sm={4}>
-                <h4>Choose a Season:</h4>
+              <Col sm={2}>
+                <h5>Choose a Season:</h5>
               </Col>
-              <Col>
+              <Col sm={10} md="auto">
                 <Row>
                   {[...Array(seasons)].map((x, i) => (
                     <Col key={i}>
@@ -52,16 +52,16 @@ const SerieCredits = ({ seasons }) => {
                 </Row>
               </Col>
             </Row>
-          </Container>
-        </Card.Header>
-        <Card.Body>
-          <Container>
+            <br></br>
             <Row>
-              <Col>Current Season: {season}</Col>
+              <Col>
+                <b>Current Season:</b> {season}
+              </Col>
+              <Col>
+                <b>Number of actors:</b> {actors.length}
+              </Col>
             </Row>
-            <Row>
-              <Col>Number of actors: {actors.length}</Col>
-            </Row>
+            <br></br>
             <Row>
               {actors.length > 0 &&
                 actors.map((actor) => (
