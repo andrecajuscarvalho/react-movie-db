@@ -14,7 +14,7 @@ const Series = ({ num_displayed_results, series, query }) => {
           <h1>Series</h1>
         </Row>
         <br></br>
-        <Row>
+        <Row md="auto">
           {series.length > 0 &&
             series.slice(0, num_displayed_results).map((serie) => (
               <Col key={serie.id}>

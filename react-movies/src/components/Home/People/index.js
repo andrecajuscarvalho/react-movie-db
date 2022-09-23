@@ -14,7 +14,7 @@ const People = ({ num_displayed_results, people, query }) => {
           <h1>People</h1>
         </Row>
         <br></br>
-        <Row>
+        <Row md="auto">
           {people.length > 0 &&
             people.slice(0, num_displayed_results).map((person) => (
               <Col key={person.id}>
